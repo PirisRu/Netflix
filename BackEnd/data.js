@@ -376,7 +376,7 @@ export const data = {
       title: 'The Last Man on Earth',
       description:
         'The Last Man on Earth is an American post-apocalyptic comedy television series created by and starring Will Forte. The series premiered on Fox on March 1, 2015, and the fourth and final season concluded on March 8, 2018. The series follows the adventures of Phil Miller, an average man who becomes the last human being on Earth after a deadly virus spreads throughout the planet.',
-      img: 'https://images.fanart.tv/fanart/the-last-man-on-earth-57f134dc29c53.jpg',
+      img: 'https://www.indiewire.com/wp-content/uploads/2015/05/the_last_man_on_earth_cast.jpg',
       imgTitle:
         'https://images.fanart.tv/fanart/the-last-man-on-earth-56c5fc0826ac9.png',
       imgThumb:

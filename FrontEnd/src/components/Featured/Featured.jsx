@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import {React, useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined"
@@ -36,7 +36,7 @@ function Featured ({type}) {
     return ()=>{
         clearInterval(interval);
     }
-  },[type])
+  },[type, user.token])
 
   return (
     <div className='featured'>

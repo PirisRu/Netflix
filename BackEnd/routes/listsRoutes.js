@@ -1,11 +1,6 @@
-import express from 'express'
-import List from '../models/listSchema.js'
-import Content from '../models/contentSchema.js'
-import User from '../models/userSchema.js'
-import expressAsyncHandler from 'express-async-handler'
-
-import { listMovieNames, listSeriesNames, genres, data } from '../data.js'
-import { isAuth } from '../utils.js'
+import express from 'express';
+import List from '../models/listSchema.js';
+import { isAuth } from '../utils.js';
 
 const listsRouter = express.Router()
 

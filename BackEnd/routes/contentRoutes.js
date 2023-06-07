@@ -1,9 +1,7 @@
-import express from 'express'
-import List from '../models/listSchema.js'
-import Content from '../models/contentSchema.js'
-import User from '../models/userSchema.js'
-import expressAsyncHandler from 'express-async-handler'
-import { isAuth } from '../utils.js'
+import express from 'express';
+import Content from '../models/contentSchema.js';
+import expressAsyncHandler from 'express-async-handler';
+import { isAuth } from '../utils.js';
 
 const contentRouter = express.Router()
 

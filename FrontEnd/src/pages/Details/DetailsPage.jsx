@@ -1,7 +1,6 @@
-import React, { useEffect,  useState, useContext } from 'react'
+import { React, useEffect,  useState, useContext } from 'react'
 import {useParams, useNavigate } from 'react-router-dom'
 import Navbar from '../../components/Navbar/Navbar'
-import axios from 'axios'
 import { AuthContext } from '../../auth/authContext'
 import { GetContent } from '../../utils'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
@@ -24,7 +23,7 @@ function DetailsPage () {
       }
     }
     CallGetContent()
-  }, [])
+  }, [_id, user.token])
 
   return (
     <div className='main'>
