@@ -36,7 +36,7 @@ function Featured ({type}) {
     return ()=>{
         clearInterval(interval);
     }
-  },[type, user.token])
+  },[type])
 
   return (
     <div className='featured'>

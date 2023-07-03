@@ -1,41 +1,42 @@
-import React, { useContext, useEffect } from 'react'
-import {useState} from 'react'
-import { useNavigate,Link, useLocation } from 'react-router-dom';
-import {AuthContext} from "../../auth/authContext"
-import{ loginCall} from "../../auth/authApiCalls"
-import "./LoginPage.scss"
+import React, { useContext, useEffect } from 'react';
+import { useState } from 'react';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { AuthContext } from '../../auth/authContext';
+import { loginCall } from '../../auth/authApiCalls';
+import './LoginPage.scss';
 
 function LoginPage() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { isFetching, user, dispatch } = useContext(AuthContext);
 
-    const [email,setEmail] = useState('');
-    const [password,setPassword] = useState('');
-    const {isFetching,user,dispatch} = useContext(AuthContext);
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const { search } = useLocation();
 
-    const {search} = useLocation();
+  const redirectUrl = new URLSearchParams(search).get('redirect');
+  const redirect = redirectUrl ? redirectUrl : '/';
 
-    const redirectUrl = new URLSearchParams(search).get("redirect");
-    const redirect = redirectUrl? redirectUrl : "/";
-
-    useEffect(()=>{
-        if(user){
-            navigate(redirect);
-        }
-    },[navigate,redirect,user])
-
-    const handleLogin = async (e)=>{
-        e.preventDefault();
-        try{    
-            await loginCall({
-                email,password
-            },dispatch)
-        }catch(err){
-            console.log(err);
-        }
+  useEffect(() => {
+    if (user) {
+      navigate(redirect);
     }
+  }, [navigate, redirect, user]);
 
-
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await loginCall(
+        {
+          email,
+          password,
+        },
+        dispatch
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className="login">
@@ -50,7 +51,13 @@ function LoginPage() {
       </div>
       <div className="container">
         <form>
-          <h1>Sign In</h1>
+          <div>
+            <h1>Sign In</h1>
+            <h5>
+              (This is a DEMO only, you may use admin@example.com with the
+              password of 12345)
+            </h5>
+          </div>
           <input
             type="email"
             placeholder="Email or phone number"
@@ -81,7 +88,7 @@ function LoginPage() {
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default LoginPage
+export default LoginPage;
